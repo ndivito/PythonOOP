@@ -1,4 +1,4 @@
-class Employee:
+class Employee: #Defition of Employee Class
     # Define an attribute called name
     name = "Ben"
 
@@ -6,7 +6,7 @@ class Employee:
         # Change the value of the attribute within a method
         Employee.name = "Mark"
 
-employee = Employee()
+employee = Employee() #Create instance of the employee class named employee
 print(employee.name)
 employee.changeName()
 print(employee.name)
