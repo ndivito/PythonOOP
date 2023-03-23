@@ -24,6 +24,7 @@ while True:
     print("1: Pick new wood")
     print("2: check legs")
     print("3: saw off leg")
+    print("4: Exit")
     choice = int(input())
     if choice == 1:
         print("what do you want your new wood type to be?")
@@ -32,6 +33,8 @@ while True:
         chair.checkLegs()
     elif choice == 3:
         chair.sawLegOff()
+    elif choice == 4:
+        exit()
     else:
         print("Please pick a value shown")
 
