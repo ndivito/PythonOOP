@@ -8,22 +8,30 @@ class Chair(Furniture):
     def checkLegs(self):
         print('you have {} legs left on this chair'.format(self.__numberLegs))
 
-    def newWood(self):
-        print("what do you want your new wood type to be?")
-        self.woodType = input().title()
+    def newWood(self, wood):
+        self.woodType = wood
         print("your chair is now made of {} wood".format(self.woodType))
     def sawLegOff(self):
         if self.__numberLegs > 0:
             self.__numberLegs = self.__numberLegs -1
-            print("you just sawed a leg off...")
+            print("you just sawed a leg off... only {} left".format(self.__numberLegs))
         else:
             print("there are no legs left to saw off!")
 
 chair = Chair()
-chair.newWood()
-chair.checkLegs()
-chair.sawLegOff()
-chair.checkLegs()
-print("your chair woodtype is {}".format(chair.woodType))
-print("your chair has this many legs : {}".format(chair._numberLegs))
-chair._numberLegs = 2
+
+while True:
+    print("1: Pick new wood")
+    print("2: check legs")
+    print("3: saw off leg")
+    choice = int(input())
+    if choice == 1:
+        print("what do you want your new wood type to be?")
+        chair.newWood(input().title())
+    elif choice == 2:
+        chair.checkLegs()
+    elif choice == 3:
+        chair.sawLegOff()
+    else:
+        print("Please pick a value shown")
+
